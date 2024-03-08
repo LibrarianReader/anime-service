@@ -14,4 +14,4 @@ RUN pip install -r /app/requirements.txt \
 
 COPY . /app/
 
-ENTRYPOINT ["sh", "-c", "uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 && pytest /app/tests"]
+ENTRYPOINT ["sh", "-c", "uvicorn app.main:app --reload --host 0.0.0.0 --port $PORT && pytest /app/tests"]
