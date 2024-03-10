@@ -21,12 +21,12 @@ async def shutdown():
 
 app.include_router(animes, prefix='/api/v1/animes', tags=['animes'])
 
+app_second = FastAPI()
 if __name__ == '__main__':
     import uvicorn
     import os
-    app_second = FastAPI()
     try:
         PORT = int(os.environ['PORT'])
     except KeyError as keyerr:
-        PORT = 8000
+        PORT = 80
     uvicorn.run(app_second, host='0.0.0.0', port=PORT)
