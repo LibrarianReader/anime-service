@@ -27,5 +27,5 @@ if __name__ == '__main__':
     try:
         PORT = int(os.environ['PORT'])
     except KeyError as keyerr:
-        PORT = 80
+        PORT = 8000
     uvicorn.run(app, host='0.0.0.0', port=PORT)
