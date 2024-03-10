@@ -16,11 +16,11 @@ jobs:
           pip install -r requirements.txt
           docker build . --file Dockerfile --tag ${{secrets.YC_REGISTRY_ID}}/anime-service:latest
           docker run -p 80:80 -d ${{secrets.YC_REGISTRY_ID}}/anime-service:latest
-          sleep 5
+          sleep 30
 
       - name: Run tests
         run: |
-          python3 app/test_anime_service.py
+          python3 test_anime_service.py
 
   build-and-push-yc:
     runs-on: ubuntu-latest
