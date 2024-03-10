@@ -20,7 +20,7 @@ jobs:
 
       - name: Run tests
         run: |
-          python3 test_anime_service.py
+          python3 app/test_anime_service.py
 
   build-and-push-yc:
     runs-on: ubuntu-latest
