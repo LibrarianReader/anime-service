@@ -24,9 +24,9 @@ app.include_router(animes, prefix='/api/v1/animes', tags=['animes'])
 if __name__ == '__main__':
     import uvicorn
     import os
-    app = FastAPI()
+    app_second = FastAPI()
     try:
         PORT = int(os.environ['PORT'])
     except KeyError as keyerr:
         PORT = 8000
-    uvicorn.run(app, host='0.0.0.0', port=PORT)
+    uvicorn.run(app_second, host='0.0.0.0', port=PORT)
